@@ -388,6 +388,9 @@ datacenters = "LAB"
 region = "kube-region"
 zone = "kube-zone"
 `))
+	if err != nil {
+		t.Fatalf("Should succeed when a valid config is provided: %s", err)
+	}
 	vsphere, err := buildVSphereFromConfig(noSecretCfg)
 	if err != nil {
 		t.Fatalf("Should succeed when a valid config is provided: %s", err)
@@ -417,6 +420,9 @@ datacenters = "LAB"
 region = "kube-region"
 zone = "kube-zone"
 `))
+	if err != nil {
+		t.Fatalf("Should succeed when a valid config is provided: %s", err)
+	}
 	vsphere, err = buildVSphereFromConfig(withSecretCfg)
 	if err != nil {
 		t.Fatalf("Should succeed when a valid config is provided: %s", err)
